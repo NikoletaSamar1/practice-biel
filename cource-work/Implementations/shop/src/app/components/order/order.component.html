@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <h2 class="order-title">Your Order</h2>
+  <div class="food">
+    <div *ngIf="order">
+      <div *ngFor="let food of order.food" class="food-card">
+        <div class="info">
+          <ng-container *ngIf="food.category === 'APPETIZER'">
+            <img class="food-image" src="https://i.pinimg.com/736x/eb/b6/ea/ebb6ea7addf8cb02244e5a4176ef197d.jpg" alt="Appetizer image">
+          </ng-container>
+          <ng-container *ngIf="food.category === 'SALAD'">
+            <img class="food-image" src="https://i.pinimg.com/736x/06/dc/c9/06dcc92ed19ef93de6ed51a424977cec.jpg" alt="Salad image">
+          </ng-container>
+          <ng-container *ngIf="food.category === 'DESSERT'">
+            <img class="food-image" src="https://i.pinimg.com/474x/1f/37/e8/1f37e8693bead35cba6f0e2f60892312.jpg" alt="Dessert image">
+          </ng-container>
+
+          <div class="food-info">
+            <h4>{{ food.name }}</h4>
+            <p>{{ food.description }}</p>
+            <p>Price: {{ food.price }} lv.</p>
+            <button class="btn btn-link" (click)="removeFoodFromOrder(food.id)">Remove food from order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-total">
+        <h4 class="border-bottom text-center">Total price: {{ order.totalValue }} lv.</h4>
+        <button (click)="finishOrderAction()" class="btn btn-link nav-link">Buy products</button>
+      </div>
+    </div>
+
+    <div *ngIf="!order">
+      <h1>Your order is empty!</h1>
+    </div>
+  </div>
+</div>

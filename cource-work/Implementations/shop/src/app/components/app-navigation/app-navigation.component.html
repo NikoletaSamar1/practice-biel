@@ -1,0 +1,52 @@
+<div class="registration-container">
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/all/food">Food</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/food/search">Search</a>
+      </li>
+      @if (isAdmin()) {
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/food/add">Add Food</a>
+        </li>
+      }
+      @if (isLoggedIn()) {
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/add/comment">Add Comment</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/own/comments">Your Comments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/order/review">Review Order</a>
+        </li>
+      }
+      @if (isAdmin()) {
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/profiles">Users</a>
+        </li>
+      }
+    </ul>
+
+    <ul class="auth-buttons">
+      @if (!isLoggedIn()) {
+        <li class="nav-item">
+          <a class="nav-link login" routerLink="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link register" routerLink="/register">Register</a>
+        </li>
+      }
+      @if (isLoggedIn()) {
+        <li class="nav-item">
+          <button class="btn btn-link nav-link logout" (click)="logout()">Logout</button>
+        </li>
+      }
+    </ul>
+  </nav>
+</div>

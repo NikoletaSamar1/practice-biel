@@ -1,0 +1,49 @@
+<div class="wrapper">
+    <div *ngIf="food">
+      <section class="food-info text-center">
+        <span *ngIf="food.category === 'APPETIZER'">
+            <img src="https://i.pinimg.com/736x/eb/b6/ea/ebb6ea7addf8cb02244e5a4176ef197d.jpg" alt="Appetizer image">
+          </span>
+          <span *ngIf="food.category === 'SALAD'">
+            <img src="https://i.pinimg.com/736x/06/dc/c9/06dcc92ed19ef93de6ed51a424977cec.jpg" alt="Salad image">
+          </span>
+          <span *ngIf="food.category === 'DESSERT'">
+            <img src="https://i.pinimg.com/474x/1f/37/e8/1f37e8693bead35cba6f0e2f60892312.jpg" alt="Dessert image">
+          </span>
+        <h4 class="border-bottom mb-5" id="food-name">{{ food.name }}</h4>
+        <p>
+          Calories: <span id="calories">{{ food.calories }}</span> kcal<br />
+          Grams: <span id="grams">{{ food.grams }}</span><br />
+          Category: <span id="categoryType">{{ food.category }}</span><br />
+          Price: <span id="price">{{ food.price }}</span><br />
+        </p>
+        <div class="food-description text-center">
+          <h5>Description:</h5>
+          <p id="food-description">{{ food.description }}</p>
+        </div>
+        <section class="order">
+            <div class="buttons-container">
+            @if (isLogged()) {
+                <button
+                (click)="addToOrder(food)"
+                class="btn btn-link"
+                >
+                Add to order
+                </button>
+            }
+          
+          @if (isAdmin()) {
+            <button
+            class="btn btn-secondary"
+            [routerLink]="['/food/edit', food.id]"
+            *ngIf="food.id"
+            >
+            Edit Food
+            </button>
+          }
+        </div>
+        </section>
+      </section>
+    </div>
+  </div>
+  

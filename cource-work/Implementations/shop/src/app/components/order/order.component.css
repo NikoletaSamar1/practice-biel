@@ -1,0 +1,139 @@
+/* General Wrapper Styles */
+.wrapper {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #eaeef3; /* Light background */
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Order Title */
+.order-title {
+  text-align: center;
+  color: #2c3e50; /* Dark blue-gray */
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+/* Food Container - Horizontal Layout */
+.food {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for responsive design */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+  background-color: #ffffff; /* White background for food container */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  width: 90%; /* Container width */
+  max-width: 1200px;
+  justify-content: center; /* Center the cards */
+}
+
+/* Food Item Card */
+.food-card {
+  background-color: #ffffff;
+  border: 1px solid #dcdde1;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 250px; /* Set width of the food cards */
+  height: 300px; /* Set height of the food cards */
+  position: relative;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border-color: #3498db; /* Highlighted border on hover */
+}
+
+/* Food Image */
+.food-image {
+  border-radius: 8px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Food Info */
+.food-info {
+  text-align: center;
+}
+
+.food-info h4 {
+  font-size: 1.2rem;
+  color: #3498db; /* Blue color for food name */
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.food-info p {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin: 5px 0;
+}
+
+/* Remove Button */
+.food-info .btn {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background-color: #3498db;
+  color: white;
+  margin-top: 10px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.food-info .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Total Price and Order Actions */
+.order-total {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.order-total h4 {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.order-total .btn-link {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.order-total .btn-link:hover {
+  background-color: #0056b3;
+}
+
+/* Empty Order Message */
+.order-total h1 {
+  font-size: 2rem;
+  color: #e74c3c;
+  font-weight: bold;
+  margin-top: 40px;
+}

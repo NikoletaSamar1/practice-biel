@@ -1,0 +1,34 @@
+<div class="comments-container">
+  <!-- Explanation Section -->
+  <div class="comments-header">
+      <h2>Welcome to the Best Place to Buy Healthy Food</h2>
+      <p>Our platform is dedicated to providing you with the best food options, helping you make healthier choices for you and your family. We value your feedback and encourage you to share your thoughts!</p>
+  </div>
+
+  <!-- Comments Header -->
+  <div class="comments-title">
+      <h2>Your Opinion Is Important To Us</h2>
+  </div>
+
+  <!-- Comments Grid -->
+  <div class="comments-grid">
+      @for (comment of comments; track comment.id) {
+          <div class="comment-card">
+              <h4>{{ comment.username }}</h4>
+              <p>{{ comment.commentText }}</p>
+              <div class="comment-actions">
+                  @if (isAdmin()) {
+                      <button class="btn btn-delete" (click)="deleteComment(comment.id)">Delete</button>
+                  }
+              </div>
+          </div>
+      }
+  </div>
+
+  <!-- Add Comment Button -->
+  @if (isLoggedIn()) {
+      <div class="add-comment">
+          <button class="btn btn-add" routerLink="/add/comment">Add Comment</button>
+      </div>
+  }
+</div>

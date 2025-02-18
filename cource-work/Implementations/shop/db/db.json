@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "commentText": "admin comment",
+      "username": "Admin",
+      "id": 8
+    }
+  ],
+  "users": [
+    {
+      "email": "n@n.n",
+      "password": "$2a$10$mAoFu9RzUXk7qYiInf5zfOdTuB4PfcFWGy3F4TjgV3tDamp.7qg0y",
+      "username": "NikoletaSam1",
+      "fullName": "Nikolea",
+      "age": 9,
+      "role": "user",
+      "id": "Fy3mEMe"
+    },
+    {
+      "email": "test@test.test",
+      "password": "$2a$10$Flh4dYtPqAOtxnLb7eQhKuAnWkVuTX9CnXcWT5hp3PqylhnqvTwrO",
+      "username": "Admin",
+      "fullName": "Nikoleta ",
+      "age": 9,
+      "role": "admin",
+      "id": "TOn18tj"
+    }
+  ],
+  "food": [
+    {
+      "id": 1,
+      "name": "Greek Salad edited",
+      "description": "A fresh and healthy salad.",
+      "category": "SALAD",
+      "calories": 300,
+      "grams": 250,
+      "price": 15
+    },
+    {
+      "name": "burger3new",
+      "grams": 2001,
+      "calories": 550,
+      "price": 20,
+      "description": "very good, 10 ot 10 but changed again 3",
+      "category": "DESSERT",
+      "id": 2
+    },
+    {
+      "name": "appetizer1",
+      "grams": 400,
+      "calories": 600,
+      "price": 12.3,
+      "description": "amazing appetizer",
+      "category": "APPETIZER",
+      "id": 3
+    },
+    {
+      "name": "tiramisu22",
+      "grams": 150,
+      "calories": 220,
+      "price": 7.45,
+      "description": "best tiramisu",
+      "category": "DESSERT",
+      "id": 4
+    },
+    {
+      "name": "salmon toast",
+      "grams": 200,
+      "calories": 100,
+      "price": 13,
+      "description": "best way to start your meal",
+      "category": "APPETIZER",
+      "id": 5
+    },
+    {
+      "name": "exam food",
+      "grams": 120,
+      "calories": 50,
+      "price": 12,
+      "description": "test for exam",
+      "category": "DESSERT",
+      "id": 6
+    },
+    {
+      "name": "ttest",
+      "grams": 2222,
+      "calories": 500,
+      "price": 16,
+      "description": "test food added ",
+      "category": "SALAD",
+      "id": 7
+    }
+  ],
+  "orders": [
+    {
+      "id": "6vh514rst",
+      "userId": "TOn18tj",
+      "food": [],
+      "totalValue": 0
+    },
+    {
+      "id": "jhcmrc7x4",
+      "userId": "1hhaSO6",
+      "food": [
+        {
+          "id": 1,
+          "name": "Greek Salad",
+          "description": "A fresh and healthy salad.",
+          "category": "SALAD",
+          "calories": 300,
+          "grams": 250,
+          "price": 15
+        }
+      ],
+      "totalValue": 15
+    }
+  ]
+}

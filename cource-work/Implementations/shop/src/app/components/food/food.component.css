@@ -1,0 +1,110 @@
+/* General Layout */
+.food-container {
+  padding: 40px 20px; /* Add padding for spacing */
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #eaeef3; /* Soft light background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Food Header */
+.food-container h2 {
+  text-align: center;
+  color: #2c3e50; /* Dark blue-gray */
+  margin-top: 40px; /* Add top margin for spacing between header and title */
+  margin-bottom: 20px; /* Keep the bottom margin at 20px */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+/* Food Grid */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+  background-color: #ffffff; /* White container background */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  width: 90%; /* Container width */
+  max-width: 1200px;
+}
+
+/* Food Card */
+.food-card {
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque for card effect */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  border-color: #3498db; /* Highlighted border on hover */
+}
+
+/* Food Card Image */
+.food-card img {
+  border-radius: 8px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Food Card Title */
+.food-card h2 {
+  font-size: 1.2rem;
+  color: #3498db; /* Blue text */
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Food Card Description */
+.food-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-more-info {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-more-info:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .food-grid {
+      grid-template-columns: 1fr; /* One card per row */
+  }
+
+}

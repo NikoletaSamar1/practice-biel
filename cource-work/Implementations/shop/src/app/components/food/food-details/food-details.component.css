@@ -1,0 +1,229 @@
+/* General Layout */
+.wrapper {
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #eaeef3; /* Soft light background */
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; /* Centering content horizontally */
+}
+
+/* Food Header */
+.wrapper h2 {
+    text-align: center;
+    color: #2c3e50; /* Dark blue-gray */
+    margin-top: 40px; /* Space between header and title */
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* Food Info Section */
+.food-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Increased card width */
+    margin: 20px auto;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.food-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Food Image */
+.food-info img {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Food Name */
+.food-info h4 {
+    margin: 10px 0;
+    font-size: 1.8rem;
+    color: #333;
+    border-bottom: 2px solid #3498db; /* Consistent color with food grid */
+    padding-bottom: 10px;
+}
+
+/* Food Details */
+.food-info p {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.food-info span {
+    font-weight: bold;
+}
+
+/* Description Section */
+.food-description {
+    margin-top: 20px;
+}
+
+.food-description h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Order Button */
+.order {
+    margin-top: 20px;
+}
+
+/* Container for buttons */
+.buttons-container {
+    display: flex;
+    gap: 10px;  /* Add some space between the buttons */
+    justify-content: center; /* Center buttons horizontally */
+}
+
+.btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #3498db; /* Blue button color */
+    color: white;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Food Grid */
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Increased card width */
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+    background-color: #ffffff; /* White container background */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 90%; /* Container width */
+    max-width: 1200px;
+}
+
+/* Food Card */
+.food-card {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque for card effect */
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row; /* Align content horizontally */
+    justify-content: space-between; /* Spread out the content */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 450px; /* Further increase card width */
+    margin: 0 auto;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    border-color: #3498db; /* Highlighted border on hover */
+}
+
+/* Food Card Image */
+.food-card img {
+    border-radius: 8px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px; /* Space between image and text */
+}
+
+/* Food Card Text */
+.food-card .text-content {
+    flex-grow: 1; /* Make the text content take up the available space */
+}
+
+.food-card h2 {
+    font-size: 1.2rem;
+    color: #3498db; /* Blue text */
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Food Card Description */
+.food-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Buttons on the right side */
+.food-card .buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.food-card .btn-more-info {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.food-card .btn-more-info:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .food-grid {
+        grid-template-columns: 1fr; /* One card per row */
+    }
+
+    .food-info {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .food-info h4 {
+        font-size: 1.5rem;
+    }
+
+    .food-card {
+        padding: 15px;
+        max-width: 100%; /* Ensuring cards take full width on small screens */
+        flex-direction: column; /* Stack content vertically on smaller screens */
+    }
+
+    .food-card img {
+        width: 100%;
+        height: auto; /* Adjust image size for smaller screens */
+    }
+
+    .food-card .text-content {
+        margin-bottom: 15px;
+    }
+}

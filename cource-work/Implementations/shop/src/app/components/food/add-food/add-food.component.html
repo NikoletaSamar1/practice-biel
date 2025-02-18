@@ -1,0 +1,160 @@
+<div class="wrapper">
+    <section>
+      @if (isEditMode) {
+        <h1 class="border-bottom mb-5">Edit Food</h1>
+      } @else {
+        <h1 class="border-bottom mb-5">Add Food</h1>
+      }
+      
+      <div>
+        <form #foodForm="ngForm" (ngSubmit)="onSubmit(foodForm)">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              [(ngModel)]="food.name"
+              minlength="5"
+              required
+            />
+            <div *ngIf="foodForm.controls['name']?.invalid && foodForm.controls['name']?.touched">
+              <small *ngIf="foodForm.controls['name'].errors?.['required']" class="invalid-feedback bg-danger text-light rounded">
+                Name is required.
+              </small>
+              <small *ngIf="foodForm.controls['name'].errors?.['minlength']" class="invalid-feedback bg-danger text-light rounded">
+                Name must be at least 5 characters.
+              </small>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="grams">Grams</label>
+            <input
+              type="number"
+              id="grams"
+              name="grams"
+              class="form-control"
+              [(ngModel)]="food.grams"
+              min="0.1"
+              required
+            />
+            <div *ngIf="foodForm.controls['grams']?.invalid && foodForm.controls['grams']?.touched">
+              <small *ngIf="foodForm.controls['grams'].errors?.['required']" class="invalid-feedback bg-danger text-light rounded">
+                Grams are required.
+              </small>
+              <small *ngIf="foodForm.controls['grams'].errors?.['min']" class="invalid-feedback bg-danger text-light rounded">
+                Grams must be a positive number.
+              </small>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="calories">Calories</label>
+            <input
+              type="number"
+              id="calories"
+              name="calories"
+              class="form-control"
+              [(ngModel)]="food.calories"
+              min="1"
+              required
+            />
+            <div *ngIf="foodForm.controls['calories']?.invalid && foodForm.controls['calories']?.touched">
+              <small *ngIf="foodForm.controls['calories'].errors?.['required']" class="invalid-feedback bg-danger text-light rounded">
+                Calories are required.
+              </small>
+              <small *ngIf="foodForm.controls['calories'].errors?.['min']" class="invalid-feedback bg-danger text-light rounded">
+                Calories must be a positive number.
+              </small>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              class="form-control"
+              [(ngModel)]="food.price"
+              min="0.01"
+              required
+            />
+            <div *ngIf="foodForm.controls['price']?.invalid && foodForm.controls['price']?.touched">
+              <small *ngIf="foodForm.controls['price'].errors?.['required']" class="invalid-feedback bg-danger text-light rounded">
+                Price is required.
+              </small>
+              <small *ngIf="foodForm.controls['price'].errors?.['min']" class="invalid-feedback bg-danger text-light rounded">
+                Price must be a positive number.
+              </small>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              id="description"
+              name="description"
+              class="form-control"
+              [(ngModel)]="food.description"
+              minlength="10"
+              required
+            ></textarea>
+            <div *ngIf="foodForm.controls['description']?.invalid && foodForm.controls['description']?.touched">
+              <small *ngIf="foodForm.controls['description'].errors?.['required']" class="invalid-feedback bg-danger text-light rounded">
+                Description is required.
+              </small>
+              <small *ngIf="foodForm.controls['description'].errors?.['minlength']" class="invalid-feedback bg-danger text-light rounded">
+                Description must be at least 10 characters.
+              </small>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select
+              id="category"
+              name="category"
+              class="browser-default custom-select"
+              [(ngModel)]="food.category"
+              required
+            >
+              <option value="APPETIZER">Appetizer</option>
+              <option value="SALAD">Salad</option>
+              <option value="DESSERT">Dessert</option>
+            </select>
+            <div *ngIf="foodForm.controls['category']?.invalid && foodForm.controls['category']?.touched">
+              <small class="invalid-feedback bg-danger text-light rounded">
+                You must select a category.
+              </small>
+            </div>
+          </div>
+  
+          @if (isEditMode) {<div class="form-group">
+            <input
+              type="submit"
+              class="btn btn-link nav-link"
+              id="addFood"
+              value="Update Food"
+              [disabled]="foodForm.invalid"
+            />
+          </div>
+        } @else {
+            <div class="form-group">
+                <input
+                  type="submit"
+                  class="btn btn-link nav-link"
+                  id="addFood"
+                  value="Add Food"
+                  [disabled]="foodForm.invalid"
+                />
+              </div>
+        }
+          
+        </form>
+      </div>
+    </section>
+  </div>
+  

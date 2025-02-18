@@ -1,0 +1,53 @@
+<div class="search-container">
+  <h2>Search Foods</h2>
+
+  <!-- Search Form -->
+  <form (ngSubmit)="onSubmit()" #searchForm="ngForm" class="search-bar">
+    <input
+      type="text"
+      [(ngModel)]="searchCriteria.name"
+      name="name"
+      placeholder="Search by name"
+      #name="ngModel"
+    />
+    <select
+      [(ngModel)]="searchCriteria.category"
+      name="category"
+      #category="ngModel"
+    >
+      <option value="" disabled selected>Select a category</option>
+      <option value="SALAD">Salad</option>
+      <option value="APPETIZER">Appetizer</option>
+      <option value="DESSERT">Dessert</option>
+    </select>
+    <input
+      type="number"
+      [(ngModel)]="searchCriteria.caloriesMin"
+      name="caloriesMin"
+      placeholder="Min calories"
+      #caloriesMin="ngModel"
+    />
+    <input
+      type="number"
+      [(ngModel)]="searchCriteria.caloriesMax"
+      name="caloriesMax"
+      placeholder="Max calories"
+      #caloriesMax="ngModel"
+    />
+    <button type="submit" [disabled]="!searchForm.valid">Search</button>
+  </form>
+
+  <!-- Food Results -->
+  <div class="food-list">
+    <div class="food-card" *ngFor="let food of filteredFoods">
+      <h4>{{ food.name }}</h4>
+      <p>{{ food.description }}</p>
+      <p><strong>Category:</strong> {{ food.category }}</p>
+      <p><strong>Calories:</strong> {{ food.calories }}</p>
+      <p><strong>Price:</strong> {{ food.price }} lv.</p>
+      <button *ngIf="isAuthenticated" [routerLink]="['/food/details', food.id]" type="button" class="add-button">
+          More information
+      </button>
+    </div>
+  </div>
+</div>

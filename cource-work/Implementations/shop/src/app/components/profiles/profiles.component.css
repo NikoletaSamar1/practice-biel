@@ -1,0 +1,87 @@
+/* General Container Styles */
+.info {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #eaeef3; /* Soft light background */
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Title */
+.info h2 {
+  text-align: center;
+  color: #2c3e50; /* Dark blue-gray */
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+/* Profiles Container */
+.profiles-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+  background-color: #ffffff; /* White container background */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  width: 90%; /* Container width */
+  max-width: 1200px;
+}
+
+/* User Profile Card */
+.user-profile {
+  background-color: #ffffff;
+  border: 1px solid #dcdde1;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.user-profile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border-color: #3498db; /* Highlighted border on hover */
+}
+
+/* Profile Picture */
+.user-profile img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 2px solid #3498db; /* Light blue border */
+}
+
+/* Profile Details */
+.user-profile h4 {
+  font-size: 1.2rem;
+  color: #3498db; /* Blue text */
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.user-profile p {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin: 5px 0;
+}
+
+/* Role Tag */
+.user-profile .role-tag {
+  background-color: #3498db; /* Blue background */
+  color: #ffffff; /* White text */
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: inline-block;
+}

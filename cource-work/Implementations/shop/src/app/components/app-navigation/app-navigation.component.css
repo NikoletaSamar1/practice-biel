@@ -1,0 +1,155 @@
+/* Header */
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 70px; /* Standard height for a navigation bar */
+  background: rgba(255, 255, 255, 0.95); /* Slightly opaque white */
+  border-radius: 0 0 30px 30px; /* Softer elliptical bottom edge */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between; /* Space out the left and right content */
+  align-items: center; /* Vertically center the nav items */
+  padding: 0 20px; /* Add padding for better spacing */
+  backdrop-filter: blur(10px); /* Blurs the background for a modern effect */
+}
+
+/* Navigation List */
+.nav-list {
+  display: flex;
+  list-style-type: none; /* Removes bullets */
+  margin: 0;
+  padding: 0;
+  flex: 1; /* Take available space */
+  justify-content: flex-start; /* Align left side links */
+}
+
+/* Auth Buttons */
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align right side buttons */
+  margin-left: auto; /* Pushes the auth section to the right */
+}
+
+/* Navigation Items */
+.nav-item {
+  margin: 0 15px; /* Adds more spacing between items */
+}
+
+/* Navigation Links */
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600; /* Slightly bolder font for readability */
+  padding: 8px 16px; /* Better padding for touch targets */
+  border-radius: 20px; /* Rounded corners for a modern look */
+  transition: all 0.3s ease-in-out;
+  display: inline-block; /* Ensures padding behaves as expected */
+}
+
+/* Hover effect for regular links */
+.nav-link:hover,
+.nav-link:focus {
+  background-color: #4e73df; /* Subtle blue background on hover */
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Adds a shadow to buttons on hover */
+  transform: translateY(-2px); /* Slightly lift the link on hover */
+}
+
+/* Different button styles for Logout, Login, and Register */
+.nav-link.login,
+.nav-link.register,
+.nav-link.logout {
+  color: white; /* White text on buttons */
+  font-weight: 700; /* More prominent font for these buttons */
+  border-radius: 25px; /* More rounded edges */
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out; /* Smooth transition on hover/focus */
+}
+
+/* Background and hover effect for Login/Register */
+.nav-link.login {
+  background-color: #4CAF50; /* Green background for login */
+}
+
+.nav-link.register {
+  background-color: #2196F3; /* Blue background for register */
+}
+
+.nav-link.login:hover {
+  background-color: #388E3C; /* Darker green on hover */
+}
+
+.nav-link.register:hover {
+  background-color: #1976D2; /* Darker blue on hover */
+}
+
+/* Hover effects for Logout */
+.nav-link.logout {
+  background-color: #E53935; /* Red background for logout */
+}
+
+.nav-link.logout:hover {
+  background-color: #D32F2F; /* Darker red on hover */
+}
+
+/* Focus effect for all special buttons */
+.nav-link.login:focus,
+.nav-link.register:focus,
+.nav-link.logout:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6); /* Light white focus ring */
+}
+
+/* Buttons - Normal styling */
+.btn {
+  border: none;
+  background: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600; /* Slightly bolder text */
+  cursor: pointer;
+  padding: 8px 16px; /* Adds more padding for touch-friendly design */
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+.btn:hover,
+.btn:focus {
+  background-color: #4e73df; /* Button background turns blue */
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Adds a shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Accessibility: Focus styles */
+.nav-link:focus,
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5); /* Green focus ring */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-nav {
+    height: 60px; /* Adjust height for mobile */
+    padding: 0 10px; /* Reduce padding on smaller screens */
+  }
+
+  .nav-list {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center;
+  }
+
+  .nav-item {
+    margin: 10px 0; /* More vertical spacing between items */
+  }
+
+  .auth-buttons {
+    margin-left: 0; /* No margin on smaller screens */
+  }
+}

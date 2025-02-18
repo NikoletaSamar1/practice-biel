@@ -1,0 +1,27 @@
+<div class="wrapper">
+  
+    <section class="food-container">
+      <h2>Food</h2>
+      <div class="food-grid">
+        <div class="food-card" *ngFor="let foodItem of food">
+          <span *ngIf="foodItem.category === 'APPETIZER'">
+            <img src="https://i.pinimg.com/736x/eb/b6/ea/ebb6ea7addf8cb02244e5a4176ef197d.jpg" alt="Appetizer image">
+          </span>
+          <span *ngIf="foodItem.category === 'SALAD'">
+            <img src="https://i.pinimg.com/736x/06/dc/c9/06dcc92ed19ef93de6ed51a424977cec.jpg" alt="Salad image">
+          </span>
+          <span *ngIf="foodItem.category === 'DESSERT'">
+            <img src="https://i.pinimg.com/474x/1f/37/e8/1f37e8693bead35cba6f0e2f60892312.jpg" alt="Dessert image">
+          </span>
+          <div>
+            <h2>{{ foodItem.name }}</h2>
+            <p>{{ foodItem.description }}</p>
+            <a *ngIf="isAuthenticated" [routerLink]="['/food/details', foodItem.id]" class="btn btn-more-info">
+              More information
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  

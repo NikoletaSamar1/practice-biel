@@ -1,0 +1,58 @@
+/* General Layout */
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f7fc;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+    color: #333;
+  }
+  
+  /* Error Code */
+  .error-code {
+    font-size: 150px;
+    font-weight: bold;
+    color: #3498db;
+    margin: 0;
+    animation: fadeIn 1.5s ease-out;
+  }
+  
+  /* Error Message */
+  .error-message {
+    font-size: 1.5rem;
+    color: #555;
+    margin-top: 10px;
+    font-weight: 600;
+    animation: fadeIn 2s ease-out;
+  }
+  
+  /* Back to Home Link */
+  .back-home-link {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .back-home-link:hover {
+    color: #1d6fa5;
+  }
+  
+  /* Keyframe Animation for Fade In */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
